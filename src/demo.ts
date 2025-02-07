@@ -28,7 +28,7 @@ async () => {
     return total;
   }
 
-  function addProduct(index) {
+  function addProduct(index: number) {
     if (getTotal() <= limit) {
       myCart.push(products[index]);
     }
