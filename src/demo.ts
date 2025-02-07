@@ -1,13 +1,20 @@
-//@ts-check
+class Product {
+  name: string;
+  prize: number;
+  constructor(name: string, prize: number) {
+    this.name = name;
+    this.prize = prize;
+  }
+}
 
 async () => {
-  const myCart = [];
-  const products = [];
+  const myCart: Product[] = [];
+  const products: Product[] = [];
   const limit = 2;
 
   async function getProducts() {
-    const rta = await fetch("http://api.escuelajs.co/api/v1/products", {
-      method: "GET",
+    const rta = await fetch('http://api.escuelajs.co/api/v1/products', {
+      method: 'GET',
     });
     const data = await rta.json();
     products.concat(data);
@@ -33,9 +40,9 @@ async () => {
   const total = getTotal();
   console.log(total);
   const person = {
-    name: "Nicolas",
-    lastName: "Molina",
+    name: 'Nicolas',
+    lastName: 'Molina',
   };
-  const rta = person.name + limit;
-  console.log(rta);
+  // const rta = person + limit;
+  // console.log(rta);
 };
